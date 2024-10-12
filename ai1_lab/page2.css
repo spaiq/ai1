@@ -1,0 +1,224 @@
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #1e1b29;
+  color: #e0e0e0;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Updated to ensure content doesn't overflow */
+}
+
+header,
+footer {
+  background-color: #2a2540;
+  color: #ffffff;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #3e356b;
+}
+
+header {
+  position: relative;
+  transform: rotate(-2deg);
+  text-align: left;
+  padding-left: 2rem; /* Use relative units */
+}
+
+header h1 {
+  font-size: 2.5rem; /* Use rem for scalable typography */
+  color: #d4b5ff;
+  letter-spacing: 0.05em;
+  transform: rotate(2deg);
+}
+
+footer {
+  justify-content: center;
+  transform: rotate(2deg);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  flex-grow: 1;
+  padding: 2rem;
+  margin: 1rem;
+  background-color: #2a2540;
+  max-width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 2px 25px rgba(0, 0, 0, 0.4);
+  position: relative;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Courier New", Courier, monospace;
+  color: #d4b5ff;
+  margin: 2rem 0;
+  font-weight: 500;
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+ul li {
+  background-color: #3e356b;
+  color: #ffffff;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  transition: transform 0.3s ease;
+}
+
+ul li:hover {
+  transform: scale(1.05);
+}
+
+img {
+  width: 80%;
+  height: auto;
+  border-radius: 20px;
+  transition: opacity 0.4s ease;
+}
+
+img:hover {
+  opacity: 0.8;
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #f5f5f5; /* Slightly lighter color */
+  margin: 30px 0; /* Increased margin for more spacing */
+  text-align: left; /* Align left for a more traditional look */
+  padding: 0 2rem; /* Adjust padding for better spacing */
+  border-left: 5px solid #d4b5ff; /* Add a decorative left border */
+  background-color: rgba(
+    42,
+    37,
+    64,
+    0.8
+  ); /* Background with a semi-transparent look */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+  font-family: "Georgia", serif; /* Switch to a serif font for elegance */
+  letter-spacing: 0.05em; /* Add slight letter spacing */
+}
+
+button {
+  font-size: 1.2rem;
+  background-color: #d4b5ff;
+  color: #2a2540;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #b983ff;
+  transform: translateY(-5px);
+}
+
+.bordered-section {
+  border: 3px dashed #ffffff;
+  padding: 20px;
+  margin: 20px 0;
+  text-align: center;
+  box-sizing: border-box; /* Ensures borders and padding are included in width calculation */
+  max-width: 100%; /* Prevents overflow */
+  width: auto; /* Adjust width dynamically */
+}
+
+main {
+  background-image: url("https://via.placeholder.com/1500x800/2a2540/ffffff?text=Druga+Wersja+Strony");
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2rem;
+}
+
+@media (max-width: 1024px) {
+  main {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  header,
+  footer {
+    padding: 10px 20px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  main {
+    grid-template-columns: 1fr;
+    padding: 20px;
+    margin: 10px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .bordered-section {
+    padding: 15px; /* Reduce padding for smaller screens */
+    margin: 10px 0; /* Reduce margins as well */
+  }
+
+  ul li {
+    padding: 8px;
+    flex: 1 1 100%;
+  }
+
+  button {
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.4rem;
+  }
+
+  main {
+    padding: 10px;
+    margin: 0;
+    background-color: rgb(75, 20, 20);
+    box-shadow: none;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+
+  ul {
+    flex-direction: column;
+  }
+
+  ul li {
+    margin: 10px 0;
+    font-size: 1rem;
+  }
+}
