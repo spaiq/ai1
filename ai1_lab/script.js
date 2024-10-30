@@ -210,7 +210,12 @@ class Todo {
   editDeadline(index) {
     const task = this.tasks[index];
     const deadlineValue = task.deadline
-      ? new Date(task.deadline).toISOString().slice(0, 16)
+      ? new Date(
+          new Date(task.deadline).getTime() -
+            new Date().getTimezoneOffset() * 60000
+        )
+          .toISOString()
+          .slice(0, 16)
       : "";
     this.editElement(
       index,
