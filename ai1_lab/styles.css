@@ -1,0 +1,246 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+h1 {
+  margin-bottom: 20px;
+  justify-self: center;
+}
+
+h2 {
+  min-width: 120px;
+  color: #ffd4fd;
+  text-shadow: 0 0 5px #8400ff, 0 0 10px #8400ff, 0 0 20px #8400ff,
+    0 0 40px #8400ff, 0 0 80px #8400ff;
+}
+
+.blob {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 850px;
+  height: 850px;
+  border-radius: 100%;
+  background-image: linear-gradient(#1100ff 10%, #ff00f2);
+  filter: blur(300px);
+  transition: all 450ms ease-out;
+  position: fixed;
+  pointer-events: none;
+  left: 0;
+  top: 0;
+  transform: translate(calc(-50% + 15px), -50%);
+  z-index: -1;
+}
+
+#content {
+  background-color: rgba(30, 30, 30, 0.7);
+  backdrop-filter: blur(5px);
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#map-container,
+#puzzle-section {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 10px;
+}
+
+#map,
+#map-image,
+#puzzle-container,
+#puzzle-board {
+  width: 58%;
+  aspect-ratio: 1/1;
+  border: 2px solid #8c00ff;
+  margin-bottom: 10px;
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  align-content: center;
+}
+
+.neon {
+  font-family: "Monoton", cursive;
+  font-size: 80px;
+  color: #ffd5ff;
+  font-weight: 400;
+  letter-spacing: 8px;
+  text-shadow: 1px 0px 4px #ffd5ff, 2px 0px 4px #ffd5ff, 3px 0px 4px #ffd5ff,
+    2px 0px 3px #8400ff, 2px 3px 15px #8400ff, 2px 0px 15px, 5px 0px 125px,
+    20px 0vw 200px #8400ff, 40px 0vw 200px #8400ff;
+  justify-self: center;
+}
+
+.flicker-slow {
+  animation: flicker 3s linear infinite;
+}
+
+.flicker-fast {
+  animation: flicker 1s linear infinite;
+}
+
+@keyframes flicker {
+  0%,
+  19.999%,
+  22%,
+  62.999%,
+  64%,
+  64.999%,
+  70%,
+  100% {
+    opacity: 0.99;
+  }
+  20%,
+  21.999%,
+  63%,
+  63.999%,
+  65%,
+  69.999% {
+    opacity: 0.4;
+  }
+}
+
+.puzzle-piece {
+  width: 24%;
+  height: 24%;
+  border: 1px solid rgba(221, 221, 221, 0.5);
+  background-size: cover;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.puzzle-piece:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #8400ff;
+}
+
+#puzzle-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 2px;
+  position: relative;
+  height: 100%;
+}
+
+#puzzle-board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  position: relative;
+  height: 100%;
+}
+
+.puzzle-board-cell {
+  width: 100%;
+  height: 100%;
+  border: 1px dotted rgba(221, 221, 221, 0.5);
+  position: relative;
+  box-sizing: border-box;
+}
+
+#button-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+#download-map,
+#my-localization {
+  width: 20%;
+  padding: 10px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.199);
+  border: 2px solid;
+  border-image: radial-gradient(circle, #8400ff, #250136) 1;
+  border-radius: 10px;
+  cursor: pointer;
+  min-width: 200px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#download-map:hover,
+#my-localization:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #8400ff;
+}
+
+@media (max-width: 1200px) {
+  #content {
+    width: 80%;
+    padding: 1rem;
+  }
+
+  .blob {
+    width: 700px;
+    height: 700px;
+    filter: blur(200px);
+  }
+}
+
+@media (max-width: 800px) {
+  #content {
+    width: 90%;
+    padding: 1rem;
+  }
+
+  .blob {
+    width: 600px;
+    height: 600px;
+    filter: blur(180px);
+  }
+}
+
+@media (max-width: 700px) {
+  body {
+    height: auto;
+    padding: 1rem;
+  }
+
+  #content {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .blob {
+    width: 100%;
+    height: 100%;
+    filter: blur(150px);
+    transform: translate(-50%, -50%);
+  }
+
+  #button-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #download-map,
+  #my-localization {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+}

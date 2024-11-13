@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Map Puzzle Application</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Monoton&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="blob"></div>
+    <div id="content">
+      <h1 class="neon" data-text="U">
+        MA<span class="flicker-slow">P</span> PU<span class="flicker-fast"
+          >Z</span
+        >Z<span class="flicker-slow">L</span>E
+      </h1>
+      <div id="map-container">
+        <h2>Interactive Map</h2>
+        <div id="map"></div>
+        <div id="map-image">
+          <canvas id="map-canvas"></canvas>
+        </div>
+        <h2>Map image</h2>
+      </div>
+      <div id="puzzle-section">
+        <h2>Puzzles</h2>
+        <div id="puzzle-container"></div>
+        <div id="puzzle-board"></div>
+        <h2>Puzzle Board</h2>
+      </div>
+      <div id="button-container">
+        <button id="download-map">Download Map</button>
+        <button id="my-localization">My Localization</button>
+      </div>
+    </div>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-image/leaflet-image.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
