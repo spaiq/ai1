@@ -1,0 +1,29 @@
+.edit {
+  .edit-form {
+    margin-bottom: 1em;
+
+    .form-group {
+      margin-bottom: 1em;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      @media (min-width: @mobileBreakpoint) {
+        flex-direction: row;
+      }
+
+      label {
+        display: inline-block;
+        flex-grow: 1;
+      }
+
+      input[type="text"] {
+        flex-grow: 3;
+      }
+
+      textarea {
+        height: 300px;
+        flex-grow: 3;
+      }
+    }
+  }
+}

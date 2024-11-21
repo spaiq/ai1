@@ -1,0 +1,74 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: @backgroundColor;
+  display: flex;
+  flex-direction: column;
+  min-height: 95vh;
+  font-family: "Poppins", sans-serif;
+  font-size: @baseFontSize;
+  line-height: 1.5 * @baseFontSize;
+  color: @fontColor;
+
+  @media (min-width: @mobileBreakpoint) {
+    background: url('https://cdn.pixabay.com/photo/2018/01/26/20/24/pattern-3109720_960_720.jpg');
+  }
+
+  main, nav, footer {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 1rem;
+
+    @media (min-width: @mobileBreakpoint) {
+      width: 1024px;
+      margin: 0 auto;
+    }
+  }
+
+  nav {
+    margin-top: 0;
+
+    @media (min-width: @mobileBreakpoint) {
+      margin-top: 1rem;
+    }
+  }
+
+  main {
+    flex-grow: 1;
+  }
+
+  h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+  }
+
+  a {
+    text-decoration: none;
+    color: @fontColor;
+
+    &:hover {
+      color: @accentColor;
+    }
+  }
+
+  ul.action-list {
+    margin-top: 1em;
+    margin-bottom: 2em;
+
+    li {
+      display: inline-block;
+      margin-right: 1em;
+    }
+  }
+}
